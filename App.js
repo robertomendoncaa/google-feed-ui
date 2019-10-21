@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, SafeAreaView, StatusBar, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import IconCloud from 'react-native-vector-icons/FontAwesome5';
+import IconRight from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function App() {
   return (
@@ -17,7 +18,7 @@ export default function App() {
         </View>
 
         <View style={styles.cardWeather}>
-          <IconCloud name="cloud-sun" size={36} color="#e5e5e5" />
+          <IconCloud name="cloud" size={36} color="#e5e5e5" />
           <View >
             <Text style={styles.textWeather}>Içara 25º</Text>
             <Text style={styles.textWeather2}>Nublado</Text>
@@ -27,6 +28,28 @@ export default function App() {
             <Text style={styles.textWeather2}>50% hoje</Text>
           </View>
             <Icon name="more-vert" size={20} color="grey" />
+        </View>
+        
+        <View style={styles.card}>
+          <View style={styles.cardTitle}>
+            <Text style={styles.textTitleCard}>La Liga</Text>
+            <Text style={styles.time}>Ao vivo 15'</Text>
+          </View>
+          <View style={styles.cardTeam}>
+            <Image source={require('./assets/barcelona.png')} style={styles.logoTeam} />
+            <Text style={styles.textPlacar}>1     -     0</Text>
+            <Image source={require('./assets/real-madrid.png')} style={styles.logoTeam} />
+          </View>
+          <View style={styles.cardNameTeam}>
+            <Text style={styles.textNameTeam}>Barcelona</Text>
+            <Text style={styles.textNameTeam}>Real Madrid</Text>
+          </View>
+          <View style={styles.separatorLine}></View>
+          <View style={styles.cardNamePalyer}>
+            <Text style={styles.textNamePalyer}>Messi 5'</Text>
+            <Image source={require('./assets/ball.png')} style={styles.imgBall} />
+            <Icon name="more-vert" size={20} color="grey" />
+          </View>
         </View>
 
         <View style={styles.card}>
@@ -73,53 +96,73 @@ export default function App() {
           </View>
         </View>
 
-        <View style={styles.card}>
-          <View style={styles.cardTitle}>
-            <Text style={styles.textTitleCard}>La Liga</Text>
-            <Text style={styles.time}>Ao vivo 15'</Text>
-          </View>
-          <View style={styles.cardTeam}>
-            <Image source={require('./assets/barcelona.png')} style={styles.logoTeam} />
-            <Text style={styles.textPlacar}>1     -     0</Text>
-            <Image source={require('./assets/real-madrid.png')} style={styles.logoTeam} />
-          </View>
-          <View style={styles.cardNameTeam}>
-            <Text style={styles.textNameTeam}>Barcelona</Text>
-            <Text style={styles.textNameTeam}>Real Madrid</Text>
-          </View>
-          <View style={styles.separatorLine}></View>
-          <View style={styles.cardNamePalyer}>
-            <Text style={styles.textNamePalyer}>Messi 5'</Text>
-            <Image source={require('./assets/ball.png')} style={styles.imgBall} />
-            <Icon name="more-vert" size={20} color="grey" />
-          </View>
-        </View>
-
         <View style={styles.scrollHorizontal}>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <View style={styles.cardScroll}>
-              <Image source={require('./assets/meetup.png')} style={styles.imageScroll}/>
-              <Text style={styles.textScroll}>Notícias...</Text>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={[styles.textScroll, {textTransform:'uppercase'}]}>Classificação Liga dos Campeões</Text>
+                <IconRight name="arrow-right" size={20} color="grey" />
+              </View>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={[styles.textScroll, {color:'#999'}]}>Grupo A</Text>
+                <Text style={[styles.textScroll, {color:'#999'}]}>Pts PJ GP</Text>
+              </View>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={styles.textScroll}>1 Barcelona</Text>
+                <Text style={styles.textScroll}>9   3   5  </Text>
+              </View>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={styles.textScroll}>2 Real Madrid</Text>
+                <Text style={styles.textScroll}>6   3   2  </Text>
+              </View>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={styles.textScroll}>3 PSG</Text>
+                <Text style={styles.textScroll}>4   3   2  </Text>
+              </View>              
             </View>
             <View style={styles.cardScroll}>
-              <Image source={require('./assets/meetup2.png')} style={styles.imageScroll}/>
-              <Text style={styles.textScroll}>Notícias...</Text>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={[styles.textScroll, {textTransform:'uppercase'}]}>Classificação Liga dos Campeões</Text>
+                <IconRight name="arrow-right" size={20} color="grey" />
+              </View>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={[styles.textScroll, {color:'#999'}]}>Grupo A</Text>
+                <Text style={[styles.textScroll, {color:'#999'}]}>Pts PJ GP</Text>
+              </View>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={styles.textScroll}>1 Barcelona</Text>
+                <Text style={styles.textScroll}>9   3   5  </Text>
+              </View>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={styles.textScroll}>2 Real Madrid</Text>
+                <Text style={styles.textScroll}>6   3   2  </Text>
+              </View>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={styles.textScroll}>3 PSG</Text>
+                <Text style={styles.textScroll}>4   3   2  </Text>
+              </View>              
             </View>
             <View style={styles.cardScroll}>
-              <Image source={require('./assets/meetup.png')} style={styles.imageScroll}/>
-              <Text style={styles.textScroll}>Notícias...</Text>
-            </View>
-            <View style={styles.cardScroll}>
-              <Image source={require('./assets/meetup2.png')} style={styles.imageScroll}/>
-              <Text style={styles.textScroll}>Notícias...</Text>
-            </View>
-            <View style={styles.cardScroll}>
-              <Image source={require('./assets/meetup.png')} style={styles.imageScroll}/>
-              <Text style={styles.textScroll}>Notícias...</Text>
-            </View>
-            <View style={styles.cardScroll}>
-              <Image source={require('./assets/meetup2.png')} style={styles.imageScroll}/>
-              <Text style={styles.textScroll}>Notícias...</Text>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={[styles.textScroll, {textTransform:'uppercase'}]}>Classificação Liga dos Campeões</Text>
+                <IconRight name="arrow-right" size={20} color="grey" />
+              </View>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={[styles.textScroll, {color:'#999'}]}>Grupo A</Text>
+                <Text style={[styles.textScroll, {color:'#999'}]}>Pts PJ GP</Text>
+              </View>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={styles.textScroll}>1 Barcelona</Text>
+                <Text style={styles.textScroll}>9   3   5  </Text>
+              </View>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={styles.textScroll}>2 Real Madrid</Text>
+                <Text style={styles.textScroll}>6   3   2  </Text>
+              </View>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={styles.textScroll}>3 PSG</Text>
+                <Text style={styles.textScroll}>4   3   2  </Text>
+              </View>              
             </View>
           </ScrollView>
         </View>
@@ -265,25 +308,15 @@ const styles = StyleSheet.create({
   },
   cardScroll: {
     backgroundColor: '#fff',
-    height: 130,
-    width: 100,
-    // borderRadius: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
-    // padding: 5,
+    height: 140,
+    width: 330,
+    borderRadius: 10,
+    padding: 15,
     marginRight: 10,
-  },
-  imageScroll: {
-    height: 100,
-    width: 100,
-    resizeMode: 'cover'
-    // borderRadius: 5,
-    // overflow: 'hidden',
   },
   textScroll: {
     marginTop: 5,
-    fontSize: 12,
-    color: '#999',
-  },
-  
+    fontSize: 13,
+    color: '#444',
+  },  
 });
